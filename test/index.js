@@ -1,6 +1,6 @@
 const expect		= require('chai').expect;
 const winston		= require('winston');
-const logger		= require('../main.js');
+const logger		= require('../src/main.js');
 const testConsole	= require('test-console');
 
 describe('winston-lludol', () => {

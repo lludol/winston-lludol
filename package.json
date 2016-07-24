@@ -1,8 +1,8 @@
 {
   "name": "winston-lludol",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A module with winston preconfigured.",
-  "main": "main.js",
+  "main": "./src/main.js",
   "scripts": {
     "prepublish": "safe-publish-latest || (npm test && npm run lint)",
     "cover": "istanbul cover _mocha",
