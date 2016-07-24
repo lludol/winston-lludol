@@ -1,0 +1,16 @@
+{
+	"env": {
+		"node": true,
+		"mocha": true
+	},
+	"plugins": [
+		"chai-expect",
+		"mocha"
+	],
+	"extends": "eslint-config-lludol",
+	"rules": {
+		"chai-expect/missing-assertion": 2,
+		"chai-expect/terminating-properties": 2,
+		"mocha/no-exclusive-tests": 2
+	}
+}
