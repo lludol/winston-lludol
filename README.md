@@ -1,4 +1,5 @@
 # winston-lludol
+[![dependencies status](https://david-dm.org/lludol/winston-lludol/status.svg)](https://david-dm.org/lludol/winston-lludol#info=dependencies)
 [![dev-dependencies status](https://david-dm.org/lludol/winston-lludol/dev-status.svg)](https://david-dm.org/lludol/winston-lludol#info=devDependencies)
 [![Build Status](https://travis-ci.org/lludol/winston-lludol.svg?branch=master)](https://travis-ci.org/lludol/winston-lludol)
 [![Coverage Status](https://coveralls.io/repos/github/lludol/winston-lludol/badge.svg?branch=master)](https://coveralls.io/github/lludol/winston-lludol?branch=master)
