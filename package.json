@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "coveralls": "^2.11.11",
     "eslint": "^3.1.1",
     "eslint-config-lludol": "0.0.3",
     "eslint-plugin-chai-expect": "^1.1.1",
