@@ -14,25 +14,19 @@ class Winston {
 		colors.setTheme(winston.config.npm.colors);
 
 		this.logger = new (winston.Logger)({
-			level: 'silly',
-			levels: winston.config.npm.levels,
+			level:   'silly',
+			levels:  winston.config.npm.levels,
 			filters: [function (level, msg) {
-				const pattern = /(\[[A-Za-z]+\])/g;
-				return msg.replace(pattern, (str, p1) => {
-					return p1.white;
-				});
+				const pattern = /(\[[A-Za-z]+])/g;
+				return msg.replace(pattern, (str, p1) => p1.white);
 			}],
 			transports: [
 				new (winston.transports.Console)({
-					colorize: true,
-					timestamp: () => {
-						return moment().format('YYYY-MM-DD hh:mm:ss');
-					},
-					formatter: (options) => {
-						return `${options.timestamp().grey} ${this._formatLevel(options)} ${options.message} ${this._formatMeta(options)}`;
-					}
-				})
-			]
+					colorize:  true,
+					timestamp: () => moment().format('YYYY-MM-DD hh:mm:ss'),
+					formatter: (options) => `${options.timestamp().grey} ${this._formatLevel(options)} ${options.message} ${this._formatMeta(options)}`,
+				}),
+			],
 		});
 		this.logger.winston = winston;
 	}
@@ -42,7 +36,7 @@ class Winston {
 	 * @param  {Object} options - The Winston Object to get the error level.
 	 * @return {String} The String formatted.
 	 */
-	_formatLevel(options) {
+	static formatLevel(options) {
 		return colors[options.level](options.level.toUpperCase());
 	}
 
@@ -51,12 +45,11 @@ class Winston {
 	 * @param  {Object} options - The Winston object to get the meta Object.
 	 * @return {String} The meta formatted.
 	 */
-	_formatMeta(options) {
+	static formatMeta(options) {
 		if (options.meta && Object.keys(options.meta).length) {
 			return `\n\t${JSON.stringify(options.meta)}`;
-		} else {
-			return '';
 		}
+		return '';
 	}
 }
 
