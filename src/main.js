@@ -24,7 +24,7 @@ class Winston {
 				new (winston.transports.Console)({
 					colorize:  true,
 					timestamp: () => moment().format('YYYY-MM-DD hh:mm:ss'),
-					formatter: (options) => `${options.timestamp().grey} ${this._formatLevel(options)} ${options.message} ${this._formatMeta(options)}`,
+					formatter: (options) => `${options.timestamp().grey} ${this.constructor.formatLevel(options)} ${options.message} ${this.constructor.formatMeta(options)}`,
 				}),
 			],
 		});
