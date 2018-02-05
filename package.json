@@ -38,7 +38,7 @@
     "eslint-plugin-chai-expect": "^1.1.1",
     "eslint-plugin-mocha": "^4.1.0",
     "istanbul": "^0.4.4",
-    "mocha": "^3.2.0",
+    "mocha": "^4.0.0",
     "safe-publish-latest": "^1.0.0",
     "test-console": "^1.0.0"
   }
