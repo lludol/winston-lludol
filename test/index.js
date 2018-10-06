@@ -1,15 +1,8 @@
-const expect		= require('chai').expect;
-const winston		= require('winston');
-const logger		= require('../src/main.js');
-const testConsole	= require('test-console');
+const { expect } = require('chai');
+const testConsole = require('test-console');
+const logger = require('../src/main.js');
 
 describe('winston-lludol', () => {
-	describe('test instance of the logger', () => {
-		it('must be an instance of winston.Logger', (done) => {
-			expect(logger).to.be.an.instanceof(winston.Logger);
-			done();
-		});
-	});
 	describe('test output format of the logger', () => {
 		beforeEach(() => {
 			this.color = String.raw`\\u\d{3}b\[\d{2}m`;

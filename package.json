@@ -5,8 +5,8 @@
   "main": "./src/main.js",
   "scripts": {
     "prepublish": "safe-publish-latest || (npm test && npm run lint)",
-    "cover": "istanbul cover _mocha",
-    "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
+    "cover": "nyc mocha",
+    "coveralls": "nyc --reporter=lcovonly mocha && cat ./coverage/lcov.info | coveralls",
     "lint": "eslint .",
     "test": "mocha test/index.js"
   },
@@ -27,8 +27,7 @@
   "homepage": "https://github.com/lludol/winston-lludol#readme",
   "dependencies": {
     "colors": "^1.1.2",
-    "moment": "^2.14.1",
-    "winston": "^2.2.0"
+    "winston": "^3.1.0"
   },
   "devDependencies": {
     "chai": "^4.0.2",
@@ -37,8 +36,8 @@
     "eslint-config-lludol": "^0.1.3",
     "eslint-plugin-chai-expect": "^1.1.1",
     "eslint-plugin-mocha": "^5.0.0",
-    "istanbul": "^0.4.4",
     "mocha": "^5.0.1",
+    "nyc": "^13.0.1",
     "safe-publish-latest": "^1.0.0",
     "test-console": "^1.0.0"
   }

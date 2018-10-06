@@ -1,6 +1,5 @@
-const colors	= require('colors');
-const winston	= require('winston');
-const moment	= require('moment');
+const colors = require('colors');
+const winston = require('winston');
 
 /**
  * Winston handle the winston logger instance and define its configuration.
@@ -13,22 +12,29 @@ class Winston {
 	constructor() {
 		colors.setTheme(winston.config.npm.colors);
 
-		this.logger = new (winston.Logger)({
-			level:   'silly',
-			levels:  winston.config.npm.levels,
-			filters: [function (level, msg) {
-				const pattern = /(\[[A-Za-z]+])/g;
-				return msg.replace(pattern, (str, p1) => p1.white);
-			}],
+		const customFilter = winston.format((info) => {
+			const pattern = /(\[[A-Za-z]+])/g;
+			info.message = info.message.replace(pattern, (str, p1) => p1.white);
+			return info;
+		});
+
+		this.logger = winston.createLogger({
+			level:  'silly',
+			levels: winston.config.npm.levels,
+			format: winston.format.combine(
+				winston.format.splat(),
+				customFilter(),
+				winston.format.timestamp({
+					format: 'YYYY-MM-DD hh:mm:ss',
+				}),
+				winston.format.printf((info) => `${info.timestamp.grey} ${this.constructor.formatLevel(info)} ${info.message} ${this.constructor.formatMeta(info)}`),
+			),
 			transports: [
-				new (winston.transports.Console)({
-					colorize:  true,
-					timestamp: () => moment().format('YYYY-MM-DD hh:mm:ss'),
-					formatter: (options) => `${options.timestamp().grey} ${this.constructor.formatLevel(options)} ${options.message} ${this.constructor.formatMeta(options)}`,
+				new winston.transports.Console({
+					stderrLevels: ['error', 'debug'],
 				}),
 			],
 		});
-		this.logger.winston = winston;
 	}
 
 	/**
