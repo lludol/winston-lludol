@@ -17,9 +17,9 @@ npm install --save winston-lludol
 
 ```js
 const logger = require('winston-lludol');
-// logger is an instance of winston.Logger.
+// logger is created with winston.createLogger
 
-// So you have access to every winston method.
+// So you have access to every winston method
 logger.error('example - error');
 logger.warn('example - warn');
 logger.info('example - info');
@@ -29,13 +29,6 @@ logger.silly('example - silly');
 
 logger.info('[category] example');
 logger.debug('example with meta', {foo: 'bar'});
-
-// You can also edit the configuration.
-logger.level = 'debug';
-
-// You can access to the winston Object inside the logger instance.
-logger.add(logger.winston.transports.File, { filename: 'file.log' });
-logger.silly('Test log file');
 
 ```
 
