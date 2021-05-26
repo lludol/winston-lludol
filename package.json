@@ -35,7 +35,7 @@
     "eslint": "^7.0.0",
     "eslint-config-lludol": "^0.1.3",
     "eslint-plugin-chai-expect": "^2.0.0",
-    "eslint-plugin-mocha": "^5.0.0",
+    "eslint-plugin-mocha": "^8.2.0",
     "mocha": "^5.0.1",
     "nyc": "^13.0.1",
     "safe-publish-latest": "^1.0.0",
