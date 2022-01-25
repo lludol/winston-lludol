@@ -34,7 +34,7 @@
     "coveralls": "^3.0.0",
     "eslint": "^7.0.0",
     "eslint-config-lludol": "^0.1.3",
-    "eslint-plugin-chai-expect": "^2.0.0",
+    "eslint-plugin-chai-expect": "^3.0.0",
     "eslint-plugin-mocha": "^9.0.0",
     "mocha": "^9.1.0",
     "nyc": "^15.1.0",
