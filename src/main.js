@@ -52,8 +52,9 @@ class Winston {
 	 * @return {String} The meta formatted.
 	 */
 	static formatMeta(options) {
-		if (options.meta && Object.keys(options.meta).length) {
-			return `\n\t${JSON.stringify(options.meta)}`;
+		const meta = options[Symbol.for('splat')];
+		if (meta && meta.length) {
+			return `\n\t${JSON.stringify(meta.length === 1 ? meta[0] : meta)}`;
 		}
 		return '';
 	}
