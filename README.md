@@ -1,7 +1,5 @@
 # winston-lludol
-[![dependencies status](https://david-dm.org/lludol/winston-lludol/status.svg)](https://david-dm.org/lludol/winston-lludol#info=dependencies)
-[![dev-dependencies status](https://david-dm.org/lludol/winston-lludol/dev-status.svg)](https://david-dm.org/lludol/winston-lludol#info=devDependencies)
-[![Build Status](https://travis-ci.org/lludol/winston-lludol.svg?branch=master)](https://travis-ci.org/lludol/winston-lludol)
+![nodejs workflow](https://github.com/lludol/winston-lludol/actions/workflows/nodejs.yml/badge.svg)
 [![Coverage Status](https://coveralls.io/repos/github/lludol/winston-lludol/badge.svg?branch=master)](https://coveralls.io/github/lludol/winston-lludol?branch=master)
 [![npm version](https://badge.fury.io/js/winston-lludol.svg)](https://badge.fury.io/js/winston-lludol)
 
@@ -11,6 +9,8 @@ A module with [winston](https://github.com/winstonjs/winston) preconfigured.
 
 ```bash
 npm install --save winston-lludol
+# or
+yarn add winston-lludol
 ```
 
 # Example
